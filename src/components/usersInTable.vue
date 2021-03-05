@@ -246,6 +246,7 @@ export default {
     data() {
       return {
         usersBase: [],
+        idsBase: [],
         title: 'Users in Parkopedia',
         show: false,
         hide: true,
@@ -304,7 +305,6 @@ export default {
           
         },
         enableEditing(index){
-          
           this.hideTools = true;   
           this.usersBase[index].editable = true;
           this.editableUserName = this.usersBase[index]["first_name"];
@@ -312,15 +312,20 @@ export default {
           this.editableUserEmail = this.usersBase[index]["email"];
           this.editableUserCountry = this.usersBase[index]["country"];
         },
-        addNewUser(newUserName, newUserLastName, newUserEmail, newUserCountry){
-          this.usersBase.push({id: this.usersBase.length + 1, first_name: newUserName, last_name: newUserLastName, email: newUserEmail, country: newUserCountry, modified: this.currentDateTime()} );
+        creatUniqueId(){
+          for(var i = 0; i < this.usersBase.length; i++ ){
+            this.idsBase.push(this.usersBase[i]["id"]);
+          }
+          return Math.max(...this.idsBase) + 1; 
+        },
+        addNewUser(newUserName, newUserLastName, newUserEmail, newUserCountry){  
+          this.usersBase.unshift({id: this.creatUniqueId(), first_name: newUserName, last_name: newUserLastName, email: newUserEmail, country: newUserCountry, modified: this.currentDateTime()} );
           this.hideUserAddTool();
-          
         },
         showUserAddTool () {
-         this.show = true;
-         this.hide = false;
-         this.hideTools = true;   
+          this.show = true;
+          this.hide = false;
+          this.hideTools = true;   
         },
         hideUserAddTool() {
           this.show = false;
@@ -337,9 +342,10 @@ export default {
         removeUser(index){
           this.usersBase.splice(index, 1);
         },  
+        
     },  
     computed:{
- 
+        
     },
 }
 </script>

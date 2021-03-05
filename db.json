@@ -1,6 +1,6 @@
 {
     "users": [
-{"id":1,"first_name":"Paul","last_name":"Fazzino","email":"paul@parkopedia.com","country":"London","modified":"2015-05-16","status":true,"editable":false},
+{"id":1,"first_name":"Paul","last_name":"Fazzino","email":"paul@parkopedia.com","country":"London","modified":"2015-05-16","status":false,"editable":false},
 {"id":2,"first_name":"Albert","last_name":"Williamson","email":"awilliamson1@narod.ru","country":"China","modified":"2015-03-11","status":true,"editable":false},
 {"id":3,"first_name":"Mildred","last_name":"Fuller","email":"mfuller2@npr.org","country":"Peru","modified":"2015-02-15","status":true,"editable":false},
 {"id":4,"first_name":"Russell","last_name":"Robinson","email":"rrobinson3@google.pl","country":"Belarus","modified":"2014-10-31","status":false,"editable":false},
