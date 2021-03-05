@@ -1,4 +1,4 @@
-# New VUE APP 2
+# My New APP
 
 ## Project setup
 ```
