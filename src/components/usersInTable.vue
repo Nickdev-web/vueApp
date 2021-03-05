@@ -510,10 +510,8 @@ export default {
       this.editableUserCountry = this.usersBase[index]["country"];
     },
     creatUniqueId() {
-      for (var i = 0; i < this.usersBase.length; i++) {
-        this.idsBase.push(this.usersBase[i]["id"]);
-      }
-      return Math.max(...this.idsBase) + 1;
+      this.maxId  = this.usersBase.reduce((prev, current) => (+prev.id > +current.id) ? prev : current)
+      return this.maxId["id"] + 1;
     },
     addNewUser(newUserName, newUserLastName, newUserEmail, newUserCountry) {
       this.usersBase.unshift({
