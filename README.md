@@ -1,4 +1,4 @@
-# My New APP
+# New readme file
 
 ## Project setup
 ```
