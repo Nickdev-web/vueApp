@@ -556,7 +556,6 @@ export default {
 .asc:after {
   content: "\25B2";
 }
-
 .desc:after {
   content: "\25BC";
 }
