@@ -150,7 +150,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          Add a new user
+          Add the new user
         </button>
       </div>
 
